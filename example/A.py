@@ -1,43 +1,31 @@
+#!/usr/bin/env python
 import sys
-
-"""
-Sample input:
-1 1 1 0 0 0
-0 1 0 0 0 0
-1 1 1 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-
-
-Sample output:
-19
-"""
 
 
 def main():
     sys.stdin = open("input.txt", "r")
     sys.stdout = open("output.txt", "w")
-    data = [list(map(int, input().split())) for _ in range(6)]
-    print(hourglassSum(data))
+    T = int(input())
+    for case in range(1, T + 1):
+        A = int(input())
+        B = int(input())
+        K = int(input())
+
+        divisible_count = count_divisible_numbers(A, B, K)
+
+        print(f"Case {case}: {divisible_count}")
 
 
-def hourglassSum(arr: list[list[int]]) -> int:
-    max_sum = float("-inf")
+# Start here --------------------
+def count_divisible_numbers(A, B, K):
+    count = 0
+    for i in range(A, B + 1):
+        if i % K == 0:
+            count += 1
+    return count
 
-    for i in range(4):
-        for j in range(4):
-            # sum top three element
-            top = sum(arr[i][j : j + 3])
-            # sum of mid element
-            mid = arr[i + 1][j + 1]
-            # sum bottom three element
-            bottom = sum(arr[i + 2][j : j + 3])
 
-            cur_sum = top + mid + bottom
-
-            max_sum = max(max_sum, cur_sum)
-    return int(max_sum)
+# END here -----------------------
 
 
 if __name__ == "__main__":

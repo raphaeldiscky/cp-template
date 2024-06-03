@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+import sys
+
+
+def main():
+    sys.stdin = open("input.txt", "r")
+    sys.stdout = open("output.txt", "w")
+    T = int(input())
+
+    print(T)
+
+
+# Start here --------------------
+# Add functions here
+
+
+# END here -----------------------
+
+
+if __name__ == "__main__":
+    main()
