@@ -15,9 +15,3 @@
 
 - Create 5 C++ files in a folder named `div2_123`
   `python cp.py div1_123 3 cpp`
-
-## Execute
-
-To execute the script, use the following shortcut in your code editor:
-
-`Ctr+Shift+B`
